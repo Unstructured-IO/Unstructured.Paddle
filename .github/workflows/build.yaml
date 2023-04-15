@@ -1,4 +1,4 @@
-name: Build And Push Docker Image
+name: Build AARCH64 Docker Image with Wheel
 
 on:
   push:
