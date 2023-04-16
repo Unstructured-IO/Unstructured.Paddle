@@ -35,7 +35,7 @@ RUN mkdir ${HOME}/.ssh && chmod go-rwx ${HOME}/.ssh \
   &&  ssh-keyscan -t rsa github.com >> /home/.ssh/known_hosts
 ENV PYTHONPATH="${PYTHONPATH}:${HOME}"
 ENV PATH="/home/usr/.local/bin:${PATH}"
-ENV PADDLE_VERSION=2.4.2
+ENV PADDLE_VERSION=2.4.1
 
 # Install CMake (for building PaddlePaddle) and Patchelf (for building ManyLinux wheels)
 RUN wget https://github.com/Kitware/CMake/archive/refs/tags/v3.16.9.tar.gz && \
