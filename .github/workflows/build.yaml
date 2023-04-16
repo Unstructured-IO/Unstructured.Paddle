@@ -39,7 +39,7 @@ jobs:
       uses: docker/setup-qemu-action@v2
     - name: Build ARM image
       run: |
-        DOCKER_IMAGE_NAME=$DOCKER_BUILD_REPOSITORY:amd-$SHORT_SHA bash paddle/scripts/unstructured_build/create_docker_with_wheel.sh
+        DOCKER_IMAGE_NAME=$DOCKER_BUILD_REPOSITORY:arm-$SHORT_SHA bash paddle/scripts/unstructured_build/create_docker_with_wheel.sh
     - name: Push ARM image
       run: |
         # write to the build repository to cache for the publish-images job
