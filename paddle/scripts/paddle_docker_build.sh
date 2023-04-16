@@ -23,18 +23,20 @@ function start_build_docker() {
         -e CTEST_OUTPUT_ON_FAILURE=1 \
         -e CTEST_PARALLEL_LEVEL=1 \
         -e APT_MIRROR=${apt_mirror} \
-        -e WITH_GPU=ON \
+        -e WITH_GPU=${WITH_GPU:-ON} \
         -e CUDA_ARCH_NAME=Auto \
-        -e WITH_AVX=ON \
-        -e WITH_TESTING=ON \
-        -e WITH_COVERAGE=ON \
+        -e WITH_AVX=${WITH_AVX:-OFF} \
+        -e WITH_TESTING=OFF \
+        -e WITH_COVERAGE=OFF \
         -e COVERALLS_UPLOAD=ON \
+        -e PY_VERSION=${PY_VERSION:-2.7} \
         -e WITH_DEB=OFF \
         -e CMAKE_BUILD_TYPE=RelWithDebInfo \
         -e PADDLE_FRACTION_GPU_MEMORY_TO_USE=0.15 \
         -e CUDA_VISIBLE_DEVICES=0,1 \
-        -e WITH_DISTRIBUTE=ON \
-        -e RUN_TEST=ON
+        -e WITH_DISTRIBUTE=OFF \
+        -e PYTHON_ABI=${PYTHON_ABI:-cp27-cp27mu} \
+        -e RUN_TEST=OFF
 EOL
     )
 
